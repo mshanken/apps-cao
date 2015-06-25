@@ -1,0 +1,13 @@
+{
+  "globals": {
+    "title": "Cigar Aficionado Apps",
+    "description": "CAO Apps",
+    "keywords": "CAO Apps",
+    "name": "M. Shanken Communications, Inc.",
+    "uri": "www.mshanken.com",
+
+    "typekit": false,
+    "analytics": false,
+    "disqus": false
+  }
+}

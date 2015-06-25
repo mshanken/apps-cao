@@ -1,0 +1,303 @@
+/* IMPORT LESS FILES ====================================*/
+@import "_font-awesome.less";
+@import "_animate.less";
+@import "_normalize.less";
+
+/* MQ BREAKPOINT VARIABLES ====================================*/
+@mq-med: ~"only screen and (min-width: 767px)";
+@mq-lg: ~"only screen and (min-width:999px)";
+
+
+/* ======== CAO APPS ================================================================ */
+html,
+body {
+    color:#242424;
+    background-color:#eceae2;
+}
+body{
+    font-family: "Roboto","Helvetica Neue",sans-serif;
+    font-style: normal;
+    font-weight: 400; /* 400 & 700 avail */
+    font-size: 16px;
+    text-transform: none;
+    text-decoration: none;
+    text-shadow: none;
+    word-spacing: 0em;
+    line-height: 1.56;
+    letter-spacing: 0.036em;
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+h1{font-size:2.2em;}
+h2{font-size:1.6em;}
+h3{font-size:1.6em;}
+h4{font-size:1.6em;}
+h5{font-size:1.6em;}
+h6{font-size:1.6em;}
+h1, h2, h3, 
+h4, h5, h6{
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.036em;
+    word-spacing: 0em;
+    line-height: 1.32;
+    margin:0;
+    padding:0;
+    color:#413733;
+    text-shadow: 2px 2px 0px #eceae2;
+}
+a,
+a:visited,
+a:focus {
+    color: rgba(153, 0, 0, 1);
+    text-decoration: none;
+    -webkit-transition: all 116ms ease-in-out;
+    -o-transition: all 116ms ease-in-out;
+    transition: all 116ms ease-in-out;
+}
+a:active,
+a:hover {
+    color:#161616;
+    text-decoration:none;
+}
+hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top:1px solid rgba(153, 0, 0, 0.2);
+    margin: 0.56em 0 1em 0;
+    padding: 0;
+}
+figure{
+    padding:0;
+    margin:0;
+    display: block;
+}
+blockquote {
+    border-left:1px solid ;
+    margin: 1em 0;
+    padding: 4% 8%;
+}
+cite{
+    float:right;
+}
+.all-caps{
+    text-transform:uppercase;
+}
+.paragraph, 
+p{
+    margin: 0;
+    padding:0 0 1.36em;
+}
+small, 
+.small{
+    font-size:0.88em;
+}
+ul.list-unstyled,
+ol.list-unstyled{
+    list-style: none;
+}
+ul.list-inline,
+ol.list-inline{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+ol.list-inline li,
+ul.list-inline li{
+    display:inline-block;
+    margin:0;
+    padding-right: 1.36em;
+}
+ul.list-inline li:last-child{
+    padding-right:0;
+}
+ul.list-block,
+ol.list-block{
+    padding:0;
+    margin:0;
+    list-style: none;
+    white-space:nowrap;
+    display: table;
+    width: 100%;
+    border:none;
+    text-align: center;
+}
+ol.list-block li,
+ul.list-block li{
+    display: table-cell;
+    background-color:transparent;
+}
+*[role="button"] {
+    display:block;
+    padding:0.56em 4%;
+    margin:0 auto;
+    cursor: pointer;
+    background-color: rgba(253, 252, 250, 0.24);
+    border:2px solid rgba(236, 234, 226, 0.88);
+    text-transform: none;
+    font-style: italic;
+    font-weight: 700;
+    font-size:1.2em;
+    line-height: 1;
+    text-align: left;
+}
+*[role="button"]:hover{
+    background-color:transparent;
+    border-color:rgba(236, 234, 226, 1);
+}
+*[role="button"] i.fa{
+    font-weight: 400;
+    vertical-align:inherit;
+    margin-right:0.56em;
+}
+*[role="button"] i.fa-chevron-right{
+    float:right;
+    margin:0;
+    padding:0;
+}
+
+/* ======== LAYOUT ================================================================ */
+.container{
+    padding:0;
+    margin:0 auto;
+    max-width: 100%
+}
+
+.container-inner{
+    padding:4%;
+    margin:0;
+}
+
+/* ======== HEADER ================================================================ */
+.header{
+    background-color: #413733;
+    background-image: url(../img/header_bg.jpg);
+    color:#fefefe;
+    text-shadow: 2px 2px 0px #161616;
+    padding:0;
+    margin:0;
+}
+
+.header a,
+.header a:visited,
+.header a:focus {
+    color: rgba(236, 234, 226, 1);
+    text-decoration: none;
+    -webkit-transition: all 116ms ease-in-out;
+    -o-transition: all 116ms ease-in-out;
+    transition: all 116ms ease-in-out;
+}
+.header a:active,
+.header a:hover {
+    color:rgba(236, 234, 226, 0.56);
+    text-decoration:none;
+}
+
+
+.ca-logo{
+    display: inline;
+}
+.app-heading{
+    position: absolute;
+    top: 0;
+    right: 3%;
+    margin: 0;
+    padding: 12% 0.56em 0.36em;
+    font-size: 1.08em;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 1;
+    background-color: rgba(22, 22, 22, 0.48);
+    border-right:1px solid rgba(236, 234, 226, 0.36);
+    border-bottom:1px solid rgba(236, 234, 226, 0.36);
+    border-left:1px solid rgba(236, 234, 226, 0.36);
+}
+/* ======== PRODUCT ================================================================ */
+.product{
+    background-color:#FDFCFA;
+    padding:0;
+    margin:0;
+}
+.product-img{
+    margin:0 0 1em 0;
+    padding:0;
+}
+.product-img img{
+    margin:0 auto;
+    display: block;
+}
+.product-title {
+    margin:0 0 1em 0;
+    padding:0;
+}
+.product-title h1{
+    font-size: 2em;
+    display: inline;
+    line-height: 1;
+}
+.product-title h1 span{
+    font-size:1.56em;
+}
+.product-icon{
+    display: inline;
+    float:left;
+    margin:0 0.8em 0 0;
+}
+.product-icon img{
+    border-radius:4px;
+    box-shadow: 3px 3px 0px #eceae2;
+}
+/* ======== CALL TO ACTION ================================================================ */
+.cta{
+    background-color:#C5C2B3;
+    padding:0;
+    margin:0;
+    text-align: center;
+}
+.cta h2{
+    font-size:1.08em;
+    text-shadow: 1px 1px 0px #eceae2;
+}
+.cta-buttons{
+    margin:4% 0 0 0;
+    padding:0;
+}
+.cta-buttons li{
+    margin:0 0 1em 0;
+    padding:0;
+}
+
+/* ======== FOOTER ================================================================ */
+.footer{
+    padding:0;
+    margin:0;
+    font-size:0.88em;
+    text-align: center;
+}
+.footer i.fa{
+    vertical-align:inherit;
+    margin-right:0.36em;
+}
+/* ======== SVGs ================================================================ */
+.ca-logo svg{
+    fill:#eceae2;
+    width:75%;
+}
+
+
+/* ======== MQs ================================================================ */
+@media only screen and (min-width:767px) {
+    body{font-size:18px;}
+}
+@media only screen and (min-width:999px) {
+    body{font-size:20px;}
+}
+
+/* ======== PRINT ================================================================ */
+@media print {*,*:before,*:after {background: transparent !important;color: #000 !important;box-shadow: none !important;text-shadow: none !important;}a,a:visited {text-decoration: underline;}a[href]:after {content: " (" attr(href) ")";}abbr[title]:after {content: " (" attr(title) ")";}a[href^="#"]:after,a[href^="javascript:"]:after {content: "";}pre,blockquote {border: 1px solid #999;page-break-inside: avoid;}thead {display: table-header-group;}tr,img {page-break-inside: avoid;}img {max-width: 100% !important;}p,h2,h3 {orphans: 3;widows: 3;}h2,h3 {page-break-after: avoid;}}
