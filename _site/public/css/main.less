@@ -3,16 +3,20 @@
 @import "_animate.less";
 @import "_normalize.less";
 
-/* MQ BREAKPOINT VARIABLES ====================================*/
-@mq-med: ~"only screen and (min-width: 767px)";
-@mq-lg: ~"only screen and (min-width:999px)";
+/* ======== COLOR VARIABLES ================================================================ */
+@color-black:#161616;
+@color-white:#fdfcfa;
 
+@color-red:rgb(153, 0, 0);
+@color-beige:#eceae2;
+
+@color-brown:#413733;
 
 /* ======== CAO APPS ================================================================ */
 html,
 body {
-    color:#242424;
-    background-color:#eceae2;
+    color:@color-black;
+    background-color:@color-beige;
 }
 body{
     font-family: "Roboto","Helvetica Neue",sans-serif;
@@ -46,28 +50,38 @@ h4, h5, h6{
     line-height: 1.32;
     margin:0;
     padding:0;
-    color:#413733;
-    text-shadow: 2px 2px 0px #eceae2;
+    color:@color-brown;
+    text-shadow: 2px 2px 0px @color-beige;
 }
-a,
-a:visited,
-a:focus {
-    color: rgba(153, 0, 0, 1);
+a {
+    color:@color-red;
     text-decoration: none;
     -webkit-transition: all 116ms ease-in-out;
     -o-transition: all 116ms ease-in-out;
     transition: all 116ms ease-in-out;
+        &:hover {
+            color:@color-black;
+            text-decoration:none;
+        }
+        &:active { 
+            color:@color-black;
+            text-decoration:none;
+        }
+        &:visited { 
+            color:@color-red;
+            text-decoration:none;
+        }
+        &:focus { 
+            color:@color-red;
+            text-decoration:none;
+        }
 }
-a:active,
-a:hover {
-    color:#161616;
-    text-decoration:none;
-}
+
 hr{
     display: block;
     height: 1px;
     border: 0;
-    border-top:1px solid rgba(153, 0, 0, 0.2);
+    border-top:1px solid fade(@color-red, 16%);
     margin: 0.56em 0 1em 0;
     padding: 0;
 }
@@ -137,8 +151,8 @@ ul.list-block li{
     padding:0.56em 4%;
     margin:0 auto;
     cursor: pointer;
-    background-color: rgba(253, 252, 250, 0.24);
-    border:2px solid rgba(236, 234, 226, 0.88);
+    background-color: fade(@color-white, 24%);
+    border:2px solid fade(@color-beige,88%); 
     text-transform: none;
     font-style: italic;
     font-weight: 700;
@@ -147,8 +161,9 @@ ul.list-block li{
     text-align: left;
 }
 *[role="button"]:hover{
-    background-color:transparent;
-    border-color:rgba(236, 234, 226, 1);
+    background-color:fade(@color-white, 36%);
+    border-color:@color-white;
+    color:@color-black;
 }
 *[role="button"] i.fa{
     font-weight: 400;
@@ -175,27 +190,35 @@ ul.list-block li{
 
 /* ======== HEADER ================================================================ */
 .header{
-    background-color: #413733;
+    background-color: @color-brown;
     background-image: url(../img/header_bg.jpg);
     color:#fefefe;
-    text-shadow: 2px 2px 0px #161616;
+    text-shadow: 2px 2px 0px @color-black;
     padding:0;
     margin:0;
-}
-
-.header a,
-.header a:visited,
-.header a:focus {
-    color: rgba(236, 234, 226, 1);
+    a {
+    color:@color-beige;
     text-decoration: none;
     -webkit-transition: all 116ms ease-in-out;
     -o-transition: all 116ms ease-in-out;
     transition: all 116ms ease-in-out;
-}
-.header a:active,
-.header a:hover {
-    color:rgba(236, 234, 226, 0.56);
-    text-decoration:none;
+        &:hover {
+            color:@color-white;
+            text-decoration:none;
+        }
+        &:active { 
+            color:@color-red;
+            text-decoration:none;
+        }
+        &:visited { 
+            color:@color-beige;
+            text-decoration:none;
+        }
+        &:focus { 
+            color:@color-beige;
+            text-decoration:none;
+        }
+    }
 }
 
 
@@ -205,7 +228,7 @@ ul.list-block li{
 .app-heading{
     position: absolute;
     top: 0;
-    right: 3%;
+    right: 4%;
     margin: 0;
     padding: 12% 0.56em 0.36em;
     font-size: 1.08em;
@@ -213,87 +236,118 @@ ul.list-block li{
     font-style: italic;
     text-transform: uppercase;
     line-height: 1;
-    background-color: rgba(22, 22, 22, 0.48);
-    border-right:1px solid rgba(236, 234, 226, 0.36);
-    border-bottom:1px solid rgba(236, 234, 226, 0.36);
-    border-left:1px solid rgba(236, 234, 226, 0.36);
+    background-color: fade(@color-black, 56%);
+    border-right:1px solid fade(@color-beige, 36%);
+    border-bottom:1px solid fade(@color-beige, 36%);
+    border-left:1px solid fade(@color-beige, 36%);
 }
 /* ======== PRODUCT ================================================================ */
 .product{
-    background-color:#FDFCFA;
+    background-color:@color-white;
     padding:0;
     margin:0;
 }
 .product-img{
     margin:0 0 1em 0;
     padding:0;
+    img{
+        margin:0 auto;
+        display: block;
+    }
 }
-.product-img img{
-    margin:0 auto;
-    display: block;
-}
+
 .product-title {
     margin:0 0 1em 0;
     padding:0;
+    h1{
+        font-size: 2em;
+        display: inline;
+        line-height: 1;
+        span{
+            font-size:1.56em;
+        }
+    }
 }
-.product-title h1{
-    font-size: 2em;
-    display: inline;
-    line-height: 1;
-}
-.product-title h1 span{
-    font-size:1.56em;
-}
+
 .product-icon{
     display: inline;
     float:left;
     margin:0 0.8em 0 0;
+    img{
+        border-radius:4px;
+        box-shadow: 3px 3px 0px @color-beige;
+    }
 }
-.product-icon img{
-    border-radius:4px;
-    box-shadow: 3px 3px 0px #eceae2;
-}
+
 /* ======== CALL TO ACTION ================================================================ */
 .cta{
     background-color:#C5C2B3;
     padding:0;
     margin:0;
     text-align: center;
-}
-.cta h2{
-    font-size:1.08em;
-    text-shadow: 1px 1px 0px #eceae2;
+    h2{
+        font-size:1.08em;
+        text-shadow: 1px 1px 0px @color-beige;
+    }
 }
 .cta-buttons{
     margin:4% 0 0 0;
     padding:0;
-}
-.cta-buttons li{
-    margin:0 0 1em 0;
-    padding:0;
+     li{
+        margin:0 0 1em 0;
+        padding:0;
+    }
 }
 
 /* ======== FOOTER ================================================================ */
 .footer{
     padding:0;
     margin:0;
-    font-size:0.88em;
     text-align: center;
+    .small;
+    i.fa{
+        vertical-align:inherit;
+        margin-right:0.36em;
+    }
 }
-.footer i.fa{
-    vertical-align:inherit;
-    margin-right:0.36em;
-}
+
 /* ======== SVGs ================================================================ */
 .ca-logo svg{
-    fill:#eceae2;
+    fill:@color-beige;
     width:75%;
 }
 
 
 /* ======== MQs ================================================================ */
-@media only screen and (min-width:767px) {
+@media only screen and (min-width:475px) {
+    .product-title h1 {
+        font-size:2.72em;
+        span{
+            font-size:inherit;
+        }
+    }
+    .app-heading{
+        padding: 12% 4% 2%;
+        font-size:1.36em;
+    }
+}
+
+@media only screen and (min-width:757px) {
     body{font-size:18px;}
+    .ca-logo{
+        float:left;
+        width:64%;
+        margin-right:2%;
+    }
+    .app-heading{
+        padding: 10% 4% 2%;
+        font-size:1.56em;
+    }
+    .product-img{
+        float:left;
+        width:64%;
+        margin-right:2%;
+    }
 }
 @media only screen and (min-width:999px) {
     body{font-size:20px;}
