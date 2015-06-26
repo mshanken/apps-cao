@@ -51,7 +51,7 @@ h4, h5, h6{
     margin:0;
     padding:0;
     color:@color-brown;
-    text-shadow: 2px 2px 0px @color-beige;
+    text-shadow: 2px 2px 0px fade(@color-beige,56%);
 }
 a {
     color:@color-red;
@@ -104,7 +104,7 @@ cite{
 .paragraph, 
 p{
     margin: 0;
-    padding:0 0 1.36em;
+    padding:0 0 1.24em;
 }
 small, 
 .small{
@@ -152,7 +152,8 @@ ul.list-block li{
     margin:0 auto;
     cursor: pointer;
     background-color: fade(@color-white, 24%);
-    border:2px solid fade(@color-beige,88%); 
+    border:2px solid fade(@color-beige,88%);
+    box-shadow:0px 2px 2px fade(@color-black,8%);
     text-transform: none;
     font-style: italic;
     font-weight: 700;
@@ -191,8 +192,7 @@ ul.list-block li{
 /* ======== HEADER ================================================================ */
 .header{
     background-color: @color-brown;
-    background-image: url(../img/header_bg.jpg);
-    color:#fefefe;
+    color:@color-white;
     text-shadow: 2px 2px 0px @color-black;
     padding:0;
     margin:0;
@@ -237,9 +237,11 @@ ul.list-block li{
     text-transform: uppercase;
     line-height: 1;
     background-color: fade(@color-black, 56%);
+    background-image: url(../img/header_bg.jpg);
     border-right:1px solid fade(@color-beige, 36%);
     border-bottom:1px solid fade(@color-beige, 36%);
     border-left:1px solid fade(@color-beige, 36%);
+    box-shadow:0px 2px 2px fade(@color-black,16%);
 }
 /* ======== PRODUCT ================================================================ */
 .product{
@@ -249,7 +251,9 @@ ul.list-block li{
 }
 .product-img{
     margin:0 0 1em 0;
-    padding:0;
+    padding:0.24em;
+    background-color:@color-brown;
+    box-shadow:0px 2px 2px fade(@color-black,16%);
     img{
         margin:0 auto;
         display: block;
@@ -263,8 +267,9 @@ ul.list-block li{
         font-size: 2em;
         display: inline;
         line-height: 1;
+        text-shadow: 2px 2px 0px fade(@color-beige,88%);
         span{
-            font-size:1.56em;
+            /* font-size:1.56em; */
         }
     }
 }
@@ -275,19 +280,19 @@ ul.list-block li{
     margin:0 0.8em 0 0;
     img{
         border-radius:4px;
-        box-shadow: 3px 3px 0px @color-beige;
+        box-shadow: 3px 3px 0px fade(@color-beige,88%);
     }
 }
 
 /* ======== CALL TO ACTION ================================================================ */
 .cta{
-    background-color:#C5C2B3;
+    background-color: desaturate(darken(@color-beige, 12%),4%);
     padding:0;
     margin:0;
     text-align: center;
     h2{
-        font-size:1.08em;
         text-shadow: 1px 1px 0px @color-beige;
+        margin-bottom:0.24em;
     }
 }
 .cta-buttons{
@@ -319,21 +324,13 @@ ul.list-block li{
 
 
 /* ======== MQs ================================================================ */
-@media only screen and (min-width:475px) {
-    .product-title h1 {
-        font-size:2.72em;
-        span{
-            font-size:inherit;
-        }
-    }
-    .app-heading{
-        padding: 12% 4% 2%;
-        font-size:1.36em;
-    }
-}
 
-@media only screen and (min-width:757px) {
+@media only screen and (min-width:767px) {
     body{font-size:18px;}
+    .container{
+        max-width: 75%;
+    }
+/*
     .ca-logo{
         float:left;
         width:64%;
@@ -342,12 +339,15 @@ ul.list-block li{
     .app-heading{
         padding: 10% 4% 2%;
         font-size:1.56em;
+        right: 16%;
     }
     .product-img{
         float:left;
         width:64%;
         margin-right:2%;
     }
+*/
+
 }
 @media only screen and (min-width:999px) {
     body{font-size:20px;}
