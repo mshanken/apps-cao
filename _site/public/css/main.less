@@ -244,7 +244,9 @@ ul.list-inline li:last-child{
         display: block;
     }
 }
-
+.product-info .tagline{
+    display: none;
+}
 .product-title {
     margin:0 0 1em 0;
     padding:0;
@@ -356,6 +358,39 @@ ul.list-inline li:last-child{
         li:last-child{
             margin-right:0;
         }
+    }
+}
+@media only screen and (min-width:1279px){
+    .app-heading{
+        padding-top:15%;
+    }
+    .product-img{
+        float:left;
+        display: inline;
+        width:67%;
+        margin-right:1em;
+    }
+    .product-icon{
+        display: block;
+        float:none;
+        margin-top:1.56em;
+        margin-bottom:0.56em;
+    }
+    .product-info .tagline{
+        display: block;
+    }
+    .product-title h1{
+        font-size:2.56em;
+        span{font-size:1.56em;}
+    }
+    .product-description{
+        padding-left:0;
+    }
+    .cta .tagline{
+        display: none;
+    }
+    .cta h2{
+        font-size:2.24em;
     }
 }
 /* ======== PRINT ================================================================ */
