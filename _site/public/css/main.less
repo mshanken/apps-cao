@@ -56,9 +56,9 @@ h4, h5, h6{
 a {
     color:@color-red;
     text-decoration: none;
-    -webkit-transition: all 116ms ease-in-out;
-    -o-transition: all 116ms ease-in-out;
-    transition: all 116ms ease-in-out;
+    -webkit-transition: all 236ms ease-in-out;
+    -o-transition: all 236ms ease-in-out;
+    transition: all 236ms ease-in-out;
         &:hover {
             color:@color-black;
             text-decoration:none;
@@ -91,7 +91,7 @@ figure{
     display: block;
 }
 blockquote {
-    border-left:1px solid ;
+    border-left:1px solid @color-red;
     margin: 1em 0;
     padding: 4% 8%;
 }
@@ -130,22 +130,6 @@ ul.list-inline li{
 ul.list-inline li:last-child{
     padding-right:0;
 }
-ul.list-block,
-ol.list-block{
-    padding:0;
-    margin:0;
-    list-style: none;
-    white-space:nowrap;
-    display: table;
-    width: 100%;
-    border:none;
-    text-align: center;
-}
-ol.list-block li,
-ul.list-block li{
-    display: table-cell;
-    background-color:transparent;
-}
 *[role="button"] {
     display:block;
     padding:0.56em 4%;
@@ -177,13 +161,12 @@ ul.list-block li{
     padding:0;
 }
 
-/* ======== LAYOUT ================================================================ */
+/* ======== STRUCTURE ================================================================ */
 .container{
     padding:0;
     margin:0 auto;
     max-width: 100%
 }
-
 .container-inner{
     padding:4%;
     margin:0;
@@ -199,9 +182,9 @@ ul.list-block li{
     a {
     color:@color-beige;
     text-decoration: none;
-    -webkit-transition: all 116ms ease-in-out;
-    -o-transition: all 116ms ease-in-out;
-    transition: all 116ms ease-in-out;
+    -webkit-transition: all 236ms ease-in-out;
+    -o-transition: all 236ms ease-in-out;
+    transition: all 236ms ease-in-out;
         &:hover {
             color:@color-white;
             text-decoration:none;
@@ -219,16 +202,18 @@ ul.list-block li{
             text-decoration:none;
         }
     }
+    .container-inner{
+        padding-top:0;
+    }
 }
-
-
 .ca-logo{
     display: inline;
+    svg{
+        padding-top:4%;
+    }
 }
 .app-heading{
-    position: absolute;
-    top: 0;
-    right: 4%;
+    float:right;
     margin: 0;
     padding: 12% 0.56em 0.36em;
     font-size: 1.08em;
@@ -268,16 +253,13 @@ ul.list-block li{
         display: inline;
         line-height: 1;
         text-shadow: 2px 2px 0px fade(@color-beige,88%);
-        span{
-            /* font-size:1.56em; */
-        }
     }
 }
 
 .product-icon{
     display: inline;
     float:left;
-    margin:0 0.8em 0 0;
+    margin:0 1.24em 0 0;
     img{
         border-radius:4px;
         box-shadow: 3px 3px 0px fade(@color-beige,88%);
@@ -324,34 +306,57 @@ ul.list-block li{
 
 
 /* ======== MQs ================================================================ */
-
 @media only screen and (min-width:767px) {
-    body{font-size:18px;}
+    body{
+        font-size:18px;
+    }
     .container{
         max-width: 75%;
     }
-/*
-    .ca-logo{
-        float:left;
-        width:64%;
-        margin-right:2%;
-    }
     .app-heading{
-        padding: 10% 4% 2%;
+        padding-top: 12%;
         font-size:1.56em;
-        right: 16%;
     }
-    .product-img{
-        float:left;
-        width:64%;
-        margin-right:2%;
+    .product-title h1{
+        font-size:2.8em;
     }
-*/
-
+    .product-description{
+        padding-left:4.8em;
+    }            
 }
 @media only screen and (min-width:999px) {
-    body{font-size:20px;}
+    body{
+        font-size:20px;
+    }
 }
-
+@media only screen and (min-width:1099px){
+    .product-title h1 {
+        font-size: 3.8em;
+    }
+    .app-heading{
+        padding-top:14%;
+    }
+    .cta-buttons{
+        margin:1em 0 0 0;
+        padding:0;
+         li{
+            margin:0.25em 0.5em 0.5em 0;
+            padding:0;
+            float:left;
+            width: 32%;
+            display: inline;
+            *[role="button"] {
+                .small;
+                padding: 0.72em 3%;
+                i.fa-chevron-right{
+                    margin-right:0;
+                }
+            }
+        }
+        li:last-child{
+            margin-right:0;
+        }
+    }
+}
 /* ======== PRINT ================================================================ */
 @media print {*,*:before,*:after {background: transparent !important;color: #000 !important;box-shadow: none !important;text-shadow: none !important;}a,a:visited {text-decoration: underline;}a[href]:after {content: " (" attr(href) ")";}abbr[title]:after {content: " (" attr(title) ")";}a[href^="#"]:after,a[href^="javascript:"]:after {content: "";}pre,blockquote {border: 1px solid #999;page-break-inside: avoid;}thead {display: table-header-group;}tr,img {page-break-inside: avoid;}img {max-width: 100% !important;}p,h2,h3 {orphans: 3;widows: 3;}h2,h3 {page-break-after: avoid;}}
