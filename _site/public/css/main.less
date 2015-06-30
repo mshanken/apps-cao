@@ -16,7 +16,7 @@
 html,
 body {
     color:@color-black;
-    background-color:@color-beige;
+    background-color:lighten(@color-beige,4%);
 }
 body{
     font-family: "Roboto","Helvetica Neue",sans-serif;
@@ -35,7 +35,7 @@ body{
 }
 .heading-style{
     font-style: italic;
-    font-weight: 700;
+    font-weight: 400;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.036em;
@@ -49,13 +49,14 @@ body{
 h1, h2, h3, 
 h4, h5, h6{
     .heading-style;
+    font-weight: 700;
 }
-h1{font-size:2.2em;}
-h2{font-size:1.6em;}
-h3{font-size:1.6em;}
-h4{font-size:1.6em;}
-h5{font-size:1.6em;}
-h6{font-size:1.6em;}
+h1{font-size:3em;}
+h2{font-size:1.88em;}
+h3{font-size:1.88em;}
+h4{font-size:1.88em;}
+h5{font-size:1.88em;}
+h6{font-size:1.88em;}
 
 a {
     color:@color-red;
@@ -221,7 +222,7 @@ ul.list-inline li:last-child{
     display: none;
 }
 .product-title {
-    margin:0 0 1em 0;
+    margin:0 0 0.64em 0;
     padding:0;
     h1{
         font-size: 2em;
@@ -240,40 +241,44 @@ ul.list-inline li:last-child{
         box-shadow: 3px 3px 0px fade(@color-beige,88%);
     }
 }
+.visible-lg{
+    display:none;
+}
 
 /* ======== CALL TO ACTION ================================================================ */
 *[role="button"] {
     display:block;
     position: relative;
-    padding:0.56em 4%;
-    margin:0 auto;
+    padding:0.88em 0.56em 0.56em;
+    margin:0;
     cursor: pointer;
-    background-color: fade(@color-white, 36%);
+    background-color: fade(@color-white, 56%);
     border:2px solid fade(@color-beige,88%);
     box-shadow:0px 2px 2px fade(@color-black,8%);
-    text-transform: none;
-    font-style: italic;
-    font-weight: 700;
-    font-size:1.2em;
-    line-height: 1;
     text-align: left;
+    div{
+        font-size:1.24em;
+        display: inline;
+        text-transform: none;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 1.1;
+    }
 }
 *[role="button"]:hover{
-    background-color:fade(@color-white, 56%);
+    background-color:fade(@color-white, 72%);
     border-color:@color-white;
     color:@color-black;
 }
 *[role="button"] i.fa{
     font-weight: 400;
-    display: block;
-    font-size:2.36em;
+    float:left;
+    font-size:1.64em;
     vertical-align:inherit;
-    margin:0 0 0.24em 0;
+    margin:0 0.56em 0 0;
 }
-
-
 .cta{
-    background-color: desaturate(darken(@color-beige, 12%),4%);
+    background-color: desaturate(darken(@color-beige, 6%),4%);
     padding:0;
     margin:0;
     text-align: center;
@@ -334,12 +339,15 @@ ul.list-inline li:last-child{
         padding-left:4.8em;
     }            
 }
-@media only screen and (min-width:999px) {
+@media only screen and (min-width:890px){
     body{
-        font-size:20px;
+        font-size:19px;
     }
 }
 @media only screen and (min-width:1099px){
+    body{
+        font-size:19px;
+    }
     .product-title h1 {
         font-size: 3.8em;
     }
@@ -365,8 +373,29 @@ ul.list-inline li:last-child{
             margin-right:0;
         }
     }
+    *[role="button"] {
+        padding:0.36em;
+        div{
+            font-size:1em;
+            display: inline;
+            text-transform: none;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.1;
+        }
+    }
+    *[role="button"]:hover{
+        background-color:fade(@color-white, 72%);
+        border-color:fade(@color-black,24%);
+        color:@color-black;
+    }
+    *[role="button"] i.fa{
+        font-size:1.36em;
+        margin:0 0.56em 0 0;
+    }
+
 }
-@media only screen and (min-width:1279px){
+@media only screen and (min-width:1200px){
     .header{
         .container-inner{padding:2% 4%;}
     }
@@ -385,7 +414,7 @@ ul.list-inline li:last-child{
     .product-icon{
         display: block;
         float:none;
-        margin-top:1.56em;
+        margin-top:1.16em;
         margin-bottom:0.56em;
     }
     .product-info .tagline{
@@ -396,13 +425,42 @@ ul.list-inline li:last-child{
         span{font-size:1.56em;}
     }
     .product-description{
-        padding-left:0;
+        padding:0;
+        margin:0 0 1em 0;
     }
-    .cta .tagline{
+    .product-cta{
+        display: block;
+        h2{
+            margin:0;
+            padding:0;
+        }
+        .cta-buttons{
+            margin-top:0.36em;
+        }
+    }
+    *[role="button"] {
+        padding:0.56em;
+        div{
+            font-size:1em;
+            display: inline;
+            text-transform: none;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.1;
+        }
+    }
+    *[role="button"]:hover{
+        background-color:fade(@color-white, 72%);
+        border-color:fade(@color-black,24%);
+        color:@color-black;
+    }
+    *[role="button"] i.fa{
+        font-size:1.36em;
+        margin:0 0.56em 0 0;
+    }
+
+    .cta {
         display: none;
-    }
-    .cta h2{
-        font-size:2.24em;
     }
 }
 /* ======== PRINT ================================================================ */
