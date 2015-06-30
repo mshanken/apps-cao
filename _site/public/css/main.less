@@ -33,14 +33,7 @@ body{
     margin:0;
     padding:0;
 }
-h1{font-size:2.2em;}
-h2{font-size:1.6em;}
-h3{font-size:1.6em;}
-h4{font-size:1.6em;}
-h5{font-size:1.6em;}
-h6{font-size:1.6em;}
-h1, h2, h3, 
-h4, h5, h6{
+.heading-style{
     font-style: italic;
     font-weight: 700;
     text-transform: uppercase;
@@ -53,6 +46,17 @@ h4, h5, h6{
     color:@color-brown;
     text-shadow: 2px 2px 0px fade(@color-beige,56%);
 }
+h1, h2, h3, 
+h4, h5, h6{
+    .heading-style;
+}
+h1{font-size:2.2em;}
+h2{font-size:1.6em;}
+h3{font-size:1.6em;}
+h4{font-size:1.6em;}
+h5{font-size:1.6em;}
+h6{font-size:1.6em;}
+
 a {
     color:@color-red;
     text-decoration: none;
@@ -129,36 +133,6 @@ ul.list-inline li{
 }
 ul.list-inline li:last-child{
     padding-right:0;
-}
-*[role="button"] {
-    display:block;
-    padding:0.56em 4%;
-    margin:0 auto;
-    cursor: pointer;
-    background-color: fade(@color-white, 24%);
-    border:2px solid fade(@color-beige,88%);
-    box-shadow:0px 2px 2px fade(@color-black,8%);
-    text-transform: none;
-    font-style: italic;
-    font-weight: 700;
-    font-size:1.2em;
-    line-height: 1;
-    text-align: left;
-}
-*[role="button"]:hover{
-    background-color:fade(@color-white, 36%);
-    border-color:@color-white;
-    color:@color-black;
-}
-*[role="button"] i.fa{
-    font-weight: 400;
-    vertical-align:inherit;
-    margin-right:0.56em;
-}
-*[role="button"] i.fa-chevron-right{
-    float:right;
-    margin:0;
-    padding:0;
 }
 
 /* ======== STRUCTURE ================================================================ */
@@ -240,6 +214,9 @@ ul.list-inline li:last-child{
         display: block;
     }
 }
+.tagline{
+    .heading-style;
+}
 .product-info .tagline{
     display: none;
 }
@@ -265,6 +242,36 @@ ul.list-inline li:last-child{
 }
 
 /* ======== CALL TO ACTION ================================================================ */
+*[role="button"] {
+    display:block;
+    position: relative;
+    padding:0.56em 4%;
+    margin:0 auto;
+    cursor: pointer;
+    background-color: fade(@color-white, 36%);
+    border:2px solid fade(@color-beige,88%);
+    box-shadow:0px 2px 2px fade(@color-black,8%);
+    text-transform: none;
+    font-style: italic;
+    font-weight: 700;
+    font-size:1.2em;
+    line-height: 1;
+    text-align: left;
+}
+*[role="button"]:hover{
+    background-color:fade(@color-white, 56%);
+    border-color:@color-white;
+    color:@color-black;
+}
+*[role="button"] i.fa{
+    font-weight: 400;
+    display: block;
+    font-size:2.36em;
+    vertical-align:inherit;
+    margin:0 0 0.24em 0;
+}
+
+
 .cta{
     background-color: desaturate(darken(@color-beige, 12%),4%);
     padding:0;
@@ -353,13 +360,6 @@ ul.list-inline li:last-child{
             float:left;
             width: 32%;
             display: inline;
-            *[role="button"] {
-                .small;
-                padding: 0.72em 3%;
-                i.fa-chevron-right{
-                    margin-right:0;
-                }
-            }
         }
         li:last-child{
             margin-right:0;
@@ -367,6 +367,15 @@ ul.list-inline li:last-child{
     }
 }
 @media only screen and (min-width:1279px){
+    .header{
+        .container-inner{padding:2% 4%;}
+    }
+    .app-heading{
+        padding-top:8%;
+    }
+    .ca-logo svg {
+      width: 36%;
+    }
     .product-img{
         float:left;
         display: inline;
