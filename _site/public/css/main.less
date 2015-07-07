@@ -217,7 +217,9 @@ ul.list-inline li:last-child{
 }
 .tagline{
     .heading-style;
-    padding:0 8%;
+    .small;
+    padding:0;
+    margin-bottom:1.24em;
 }
 .product-info .tagline{
     display: none;
@@ -263,7 +265,6 @@ ul.list-inline li:last-child{
         text-transform: none;
         font-style: italic;
         font-weight: 400;
-        line-height: 1.1;
     }
 }
 *[role="button"]:hover{
@@ -361,8 +362,8 @@ ul.list-inline li:last-child{
     .product-icon{
         display: block;
         float:none;
-        margin-top:1em;
-        margin-bottom:0.56em;
+        margin-top:0em;
+        margin-bottom:0.72em;
     }
     .product-info .tagline{
         display: block;
@@ -371,15 +372,8 @@ ul.list-inline li:last-child{
         margin: 0;
     }
     .product-title h1{
-        font-size: 1.36em;
+        font-size: 2.16em;
         line-height: 1;
-        margin-bottom:1em;
-        span{
-            font-size: 2em;
-          line-height: 0.8;
-          display: block;
-          margin-bottom: 0.24em;
-        }
     }
     .product-description{
         padding:0;
@@ -393,7 +387,8 @@ ul.list-inline li:last-child{
         }
     }
     .cta-buttons{
-        margin:2% auto 0;
+        margin:2% 0 0 0;
+        text-align: center;
     }
     .cta-buttons li{
         display: inline-block;
@@ -407,7 +402,7 @@ ul.list-inline li:last-child{
         padding:0.56em 0;
         display: block;
         text-align: center;
-        border:1px solid @color-beige;
+        border:1px solid darken(@color-beige,16%);
         div{
             .small;
             display: inline;
@@ -418,8 +413,8 @@ ul.list-inline li:last-child{
         }
     }
     .cta-buttons li a:hover{
-        background-color:fade(@color-white, 72%);
-        border-color:fade(@color-black,24%);
+        background-color:fade(@color-white, 88%);
+        border-color:fade(@color-black,36%);
         color:@color-black;
     }
     .cta-buttons li a i.fa{
@@ -433,12 +428,16 @@ ul.list-inline li:last-child{
     }
 }
 @media only screen and (min-width:1138px){
+    .product-icon{
+        margin-top:1em;
+        margin-bottom:1em;
+    }
     .product-info .tagline{
         font-size: 0.9em;
     }
     .product-title h1{
-        font-size: 1.8em;
-        line-height: 1.2;
+        font-size: 2.56em;
+        line-height: 0.9;
     }
     .product-description{
         margin-top:0.24em;
